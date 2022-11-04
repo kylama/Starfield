@@ -16,7 +16,7 @@ class Star{
   }
   
   void move(){
-    mySpeed += 0.05;
+    mySpeed += myGrowth;
     myX += Math.cos(myAngle)*mySpeed;
     galaxyX = myX;
     myY += Math.sin(myAngle)*mySpeed;
@@ -77,8 +77,12 @@ class Oddball extends Star{
   Oddball(){
     myX = myY = 250;
     myC = color(135,180,195);
-    mySize = 10;
-    myGrowth = 1;
+    mySize = 15;
+  }
+  
+  void move(){
+    myX += (int)(Math.random()*7)-3;
+    myY += (int)(Math.random()*7)-3;
   }
   
   void show(){
